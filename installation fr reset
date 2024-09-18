@@ -51,9 +51,9 @@ systemctl enable zabbix-server zabbix-agent apache2
 
 # installation TimescaleDB Extension 
 
-apt install gnupg postgresql-common apt-transport-https lsb-release wget
+sudo apt install gnupg postgresql-common apt-transport-https lsb-release wget
 
-/usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh   # run th's command
 
 https://packagecloud.io/timescale/timescaledb/packages/ubuntu/jammy/timescaledb-2-postgresql-14_2.11.2~ubuntu22.04_arm64.deb?distro_version_id=237 (Bu linke gidilecek, Sunucuya yapıştırılmayacak)
 
@@ -61,7 +61,7 @@ curl -s https://packagecloud.io/install/repositories/timescale/timescaledb/scrip
 
 apt-get update
 
-sudo apt-get install timescaledb-2-postgresql-14=2.11.2~ubuntu22.04
+sudo apt-get install timescaledb-2-postgresql-14
 
                # TimescaleDb Tune
 
@@ -70,11 +70,11 @@ systemctl stop zabbix-server
 
 sudo timescaledb-tune
 
-apt-get update
+sudo apt-get update
 
-apt-get install postgresql-client
+sduo apt-get install postgresql-client
 
-systemctl restart postgresql
+sudo systemctl restart postgresql
 
 sudo -u zabbix psql
 
